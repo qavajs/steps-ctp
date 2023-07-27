@@ -1,8 +1,8 @@
 /node_modules/
 /built/
 /lib/
-/lib
-/test-e2e
+/lib/
+/test-e2e/
 *.*rc
 *.json
 *.yml
