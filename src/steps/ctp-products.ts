@@ -2,9 +2,12 @@ import { When } from '@cucumber/cucumber';
 import { ByProjectKeyRequestBuilder } from '@commercetools/platform-sdk/dist/declarations/src/generated/client/by-project-key-request-builder';
 import memory from '@qavajs/memory';
 import { ProductWorker } from '../ctp-utils/ctpProductsWorker';
+import { ApiRootBuilder } from '../ctp-utils/ctpApiRootCreator';
+
+const INSTANCE = ApiRootBuilder.getApiRoot();
 
 When('I save {string} products from ctp as {string}', async function (productsCount: string, keyToRemember: string) {
-  const apiRoot: ByProjectKeyRequestBuilder = await memory.getValue('$ctpApiRoot');
+  const apiRoot: ByProjectKeyRequestBuilder = INSTANCE.apiRoot;
   const productsResponse = await ProductWorker.getProductsList(apiRoot, { limit: Number.parseInt(productsCount, 10) });
   memory.setValue(keyToRemember, productsResponse);
 });
@@ -14,21 +17,21 @@ When('I expect ctp products {string} contains {string}', async function (key: st
 });
 
 When('I create new Product Type with {string} data and save it as {string}', async function (data: any, keyToRemember: string) {
-  const apiRoot: ByProjectKeyRequestBuilder = await memory.getValue('$ctpApiRoot');
+  const apiRoot: ByProjectKeyRequestBuilder = INSTANCE.apiRoot;
   const parsedData = await memory.getValue(data);
   const createdProductTypesResponse = await ProductWorker.createProductType(apiRoot, parsedData);
   memory.setValue(keyToRemember, createdProductTypesResponse);
 });
 
 When('I create new Product with {string} data and save it as {string}', async function (data: any, keyToRemember: string) {
-  const apiRoot: ByProjectKeyRequestBuilder = await memory.getValue('$ctpApiRoot');
+  const apiRoot: ByProjectKeyRequestBuilder = INSTANCE.apiRoot;
   const parsedData = await memory.getValue(data);
   const productsResponse = await ProductWorker.createProduct(apiRoot, { body: parsedData });
   memory.setValue(keyToRemember, productsResponse);
 });
 
 When('I add {string} quantity in stock for {string} product', async function (quantity: string, product: string) {
-  const apiRoot: ByProjectKeyRequestBuilder = await memory.getValue('$ctpApiRoot');
+  const apiRoot: ByProjectKeyRequestBuilder = INSTANCE.apiRoot;
   const createdProduct = await memory.getValue(product);
   await ProductWorker.addQuantity(apiRoot, {
     body: {
@@ -40,7 +43,7 @@ When('I add {string} quantity in stock for {string} product', async function (qu
 });
 
 When('I unpublish {string} product', async function (product: string) {
-  const apiRoot: ByProjectKeyRequestBuilder = await memory.getValue('$ctpApiRoot');
+  const apiRoot: ByProjectKeyRequestBuilder = INSTANCE.apiRoot;
   const createdProduct = await memory.getValue(product);
   const productResponse = await ProductWorker.getProductById(apiRoot, createdProduct.body.id);
   await ProductWorker.unpublishProduct(apiRoot, createdProduct, {
@@ -52,7 +55,7 @@ When('I unpublish {string} product', async function (product: string) {
 });
 
 When('I delete {string} product', async function (product: string) {
-  const apiRoot: ByProjectKeyRequestBuilder = await memory.getValue('$ctpApiRoot');
+  const apiRoot: ByProjectKeyRequestBuilder = INSTANCE.apiRoot;
   const createdProduct = await memory.getValue(product);
   const productResponse = await ProductWorker.getProductById(apiRoot, createdProduct.body.id);
   await ProductWorker.deleteProduct(apiRoot, createdProduct, {
