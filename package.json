@@ -40,6 +40,7 @@
     "@types/chai": "^4.3.5",
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.2",
+    "@types/node-fetch": "^2.6.4",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.59.9",
     "@vitest/coverage-c8": "^0.32.0",
@@ -66,7 +67,6 @@
     "@commercetools/platform-sdk": "^4.10.0",
     "@commercetools/sdk-client-v2": "^2.2.0",
     "@qavajs/validation": "^0.0.5",
-    "dotenv": "^16.3.1",
-    "node-fetch": "^3.3.2"
+    "dotenv": "^16.3.1"
   }
 }
