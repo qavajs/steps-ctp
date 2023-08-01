@@ -1,8 +1,6 @@
 {
   "extends": [
     "airbnb-base",
-    "plugin:wdio/recommended",
-    "plugin:chai-friendly/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
@@ -114,9 +112,7 @@
   },
   "plugins": [
     "prettier",
-    "wdio",
     "cucumber",
-    "chai-friendly",
     "@typescript-eslint",
     "import"
   ],
