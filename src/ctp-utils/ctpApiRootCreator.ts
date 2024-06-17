@@ -1,9 +1,6 @@
 import { ByProjectKeyRequestBuilder } from '@commercetools/platform-sdk/dist/declarations/src/generated/client/by-project-key-request-builder';
-import { ApiRoot, createApiBuilderFromCtpClient } from '@commercetools/platform-sdk';
-import { config } from 'dotenv';
+import { createApiBuilderFromCtpClient } from '@commercetools/platform-sdk';
 import { ctpClient } from './ctpClientBuilder';
-
-config();
 
 const PROJECT_KEY = process.env.projectKey || 'invalid_key';
 

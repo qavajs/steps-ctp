@@ -6,9 +6,7 @@ import {
   type AuthMiddlewareOptions, // Required for auth
   type HttpMiddlewareOptions, // Required for sending HTTP requests
 } from '@commercetools/sdk-client-v2';
-import { config } from 'dotenv';
 
-config();
 const PROJECT_KEY = process.env.projectKey || 'invalid_key';
 const SCOPES = process.env.scopes || 'invalid_scope';
 const HOST_AUTH = process.env.host_auth || 'invalid_auth';

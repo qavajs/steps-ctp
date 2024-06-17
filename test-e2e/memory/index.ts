@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 
 const file = (path: string) => `file://${path}`;
 export default class Memory {
