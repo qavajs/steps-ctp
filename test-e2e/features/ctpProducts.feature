@@ -7,4 +7,3 @@ Feature: actions
     And I add "3" quantity in stock for "$product" product
     Then I unpublish "$product" product
     And I delete "$product" product
-
