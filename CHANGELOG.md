@@ -4,9 +4,16 @@ All notable changes to the "@qavajs/steps-ctp" will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.0.1]
+- :bug: fixed publish workflow
+
+- ## [1.0.0]
+- :rocket: Release 1.0.0
+
 ## [0.3.0]
 Breaking change: moved _@qavajs/validation_ to peer dependencies
 After update please install latest version of @qavajs/validation package
+
 
 ## [0.0.2]
 - :rocket: refactoring was done
