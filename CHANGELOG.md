@@ -4,6 +4,9 @@ All notable changes to the "@qavajs/steps-ctp" will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [2.0.0]
+- :rocket: added v2 implementation
+
 ## [0.3.0]
 Breaking change: moved _@qavajs/validation_ to peer dependencies
 After update please install latest version of @qavajs/validation package

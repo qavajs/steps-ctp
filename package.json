@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "test": "vitest --coverage run",
-    "test:e2e": "ts-node --project tsconfig.json node_modules/@qavajs/cli/bin/qavajs.js run --config test-e2e/ctp_config.ts",
+    "test:e2e": "qavajs run --config test-e2e/ctp_config.ts",
     "ctp:build": "ts-node src/ctp-utils/ctpApiRootCreatorCreator.ts",
     "pretty": "prettier --write ./",
     "lint:write": "npm run pretty && eslint ./ --fix"
@@ -22,7 +22,8 @@
   },
   "authors": [
     "Kiryl Bahdanets",
-    "Maria Geraseva"
+    "Maria Geraseva",
+    "Alexandr Legchilov"
   ],
   "license": "MIT",
   "bugs": {
@@ -31,10 +32,9 @@
   "homepage": "https://github.com/qavajs/steps-ctp#readme",
   "devDependencies": {
     "@cucumber/cucumber": "^10.8.0",
-    "@qavajs/cli": "^0.38.0",
+    "@qavajs/core": "^2.1.1",
     "@qavajs/console-formatter": "^0.7.2",
     "@qavajs/html-formatter": "^0.15.4",
-    "@qavajs/memory": "^1.7.0",
     "@qavajs/webstorm-adapter": "^8.0.0",
     "@qavajs/xunit-formatter": "^0.0.4",
     "@types/chai": "^4.3.16",
@@ -55,13 +55,12 @@
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-wdio": "^8.8.7",
-    "express": "^4.19.2",
+    "express": "^4.21.1",
     "husky": "^8.0.3",
     "prettier": "^2.8.8",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.4.5",
+    "typescript": "^5.6.3",
     "vitest": "^1.6.0",
-    "@qavajs/validation": "^0.9.0",
+    "@qavajs/validation": "^0.10.0",
     "dotenv": "^16.4.5"
   },
   "dependencies": {

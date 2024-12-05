@@ -1,15 +1,15 @@
-import { Then, When } from '@cucumber/cucumber';
-import memory from '@qavajs/memory';
+import { Then } from '@cucumber/cucumber';
 import { expect } from 'chai';
+import { MemoryValue } from "@qavajs/core";
 
-Then('I expect {string} memory value to be equal {string}', async function (actual, expected) {
-  const actualValue = memory.getValue(actual);
-  const expectedValue = memory.getValue(expected);
+Then('I expect {value} memory value to be equal {value}', async function (actual: MemoryValue, expected: MemoryValue) {
+  const actualValue = await actual.value();
+  const expectedValue = await expected.value();
   expect(expectedValue).to.eql(actualValue);
 });
 
-Then('I expect {string} memory value to contain {string}', async function (actual, expected) {
-  const actualValue = memory.getValue(actual);
-  const expectedValue = memory.getValue(expected);
+Then('I expect {value} memory value to contain {value}', async function (actual: MemoryValue, expected: MemoryValue) {
+  const actualValue = await actual.value();
+  const expectedValue = await expected.value();
   expect(actualValue).to.contain(expectedValue);
 });
