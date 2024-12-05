@@ -1,6 +1,6 @@
 {
   "name": "@qavajs/steps-ctp",
-  "version": "0.3.0",
+  "version": "2.0.0",
   "description": "steps to interact with commercetools platform",
   "main": "./index.js",
   "scripts": {
