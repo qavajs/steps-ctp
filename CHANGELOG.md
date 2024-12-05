@@ -4,6 +4,17 @@ All notable changes to the "@qavajs/steps-ctp" will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+:rocket: - new feature
+
+:beetle: - bugfix
+
+:x: - deprecation/removal
+
+:pencil: - chore
+
+## [2.0.1]
+- :beetle: fixed publish workflow
+
 ## [2.0.0]
 - :rocket: added v2 implementation
 
